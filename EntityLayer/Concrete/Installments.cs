@@ -18,7 +18,7 @@ namespace EntityLayer.Concrete
         public Banks Banks { get; set; }
         //taksit ürün
         [ForeignKey("Product")]
-        public int ProductID { get; set; }
+        public int? ProductID { get; set; }
         public Product Product { get; set; }
         //taksit taksit tablosu
         [ForeignKey("InstallmentTable")]

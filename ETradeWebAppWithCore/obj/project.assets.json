@@ -5855,25 +5855,37 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\RTC9911\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\ETradeWebAppWithCore\\ETradeWebAppWithCore.csproj",
+      "projectUniqueName": "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\ETradeWebAppWithCore\\ETradeWebAppWithCore.csproj",
       "projectName": "ETradeWebAppWithCore",
-      "projectPath": "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\ETradeWebAppWithCore\\ETradeWebAppWithCore.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\ETradeWebAppWithCore\\obj\\",
+      "projectPath": "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\ETradeWebAppWithCore\\ETradeWebAppWithCore.csproj",
+      "packagesPath": "C:\\Users\\RTC9911\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\ETradeWebAppWithCore\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\RTC9911\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -5881,14 +5893,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\BusinessLayer\\BusinessLayer.csproj"
+            "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\BusinessLayer\\BusinessLayer.csproj"
             },
-            "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\DataAccessLayer\\DataAccessLayer.csproj"
+            "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\DataAccessLayer\\DataAccessLayer.csproj"
             },
-            "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\EntityLayer\\EntityLayer.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\EntityLayer\\EntityLayer.csproj"
+            "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\EntityLayer\\EntityLayer.csproj": {
+              "projectPath": "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\EntityLayer\\EntityLayer.csproj"
             }
           }
         }
@@ -5942,7 +5954,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.207\\RuntimeIdentifierGraph.json"
       }
     }
   }

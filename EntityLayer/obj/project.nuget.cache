@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+8tzEhCg3iZJsLMdnW3JxWzyMc2r9qMAEEh765MOgJxkM63kzHC2argLVH5fLjiXYmmqvhv5ARJrM4RgsB1piA==",
+  "dgSpecHash": "gxDMXVuA7pUCF8ugBW6O5kteVdfWTqQcmfunISYJUdj8Z0+UtrTL0JwZUk18dZvr2JycBSFqdgl2miEULXV5EQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\EntityLayer\\EntityLayer.csproj",
+  "projectFilePath": "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\EntityLayer\\EntityLayer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

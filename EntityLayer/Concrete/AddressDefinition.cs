@@ -13,7 +13,14 @@ namespace EntityLayer.Concrete
         [Key]
         public int AddressDefinitionID { get; set; }
 
-       
+        public int? CountryID { get; set; }
+        public Country Country { get; set; }
+
+        public int? CityID { get; set; }
+        public City City { get; set; }
+
+        public int? DistrictID { get; set; }
+        public District District { get; set; }
 
 
         public string AddressDescription { get; set; }
@@ -25,10 +32,10 @@ namespace EntityLayer.Concrete
         public int TaxNo { get; set; }
         public long MobileNumber { get; set; }
         public long PhoneNumber { get; set; }
+
         [ForeignKey("User")]
-        public int? UserID { get; set; }
+        public int UserID { get; set; }
         public User User { get; set; }
-        public List<Country> Countries;
 
         public List<Bill> Bills { get; set; }
     }

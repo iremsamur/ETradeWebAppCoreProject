@@ -15,7 +15,7 @@ namespace EntityLayer.Concrete
         public Order Order { get; set; }
         [ForeignKey("AddressDefinition")]
 
-        public int? AddressDefinitionID { get; set; }
+        public int AddressDefinitionID { get; set; }
         public AddressDefinition AddressDefinition { get; set; }
     }
 }

@@ -18,10 +18,18 @@ namespace EntityLayer.Concrete
 
         public string UserName { get; set; }
         public string UserTcIdentificationNumber { get; set; }
-        //sehirID
-        //UlkeID
-        //IlceID
-        //public string UserAddress { get; set; }
+
+
+        public int? CountryID { get; set; }
+        public Country Country { get; set; }
+
+        public int? CityID { get; set; }
+        public City City { get; set; }
+
+        public int? DistrictID { get; set; }
+        public District District { get; set; }
+
+
         public string UserEmail { get; set; }
         public long UserMobileNumber { get; set; }
         public long UserPhoneNumber { get; set; }

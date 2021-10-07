@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20211006061912_mig2")]
-    partial class mig2
+    [Migration("20211007145442_mig1")]
+    partial class mig1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,8 +31,17 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("AddressDescription")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("CityID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Company")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CountryID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("DistrictID")
+                        .HasColumnType("int");
 
                     b.Property<long>("MobileNumber")
                         .HasColumnType("bigint");
@@ -59,6 +68,12 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("AddressDefinitionID");
+
+                    b.HasIndex("CityID");
+
+                    b.HasIndex("CountryID");
+
+                    b.HasIndex("DistrictID");
 
                     b.HasIndex("UserID");
 
@@ -159,8 +174,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("CampaignsID");
 
-                    b.HasIndex("ProductID")
-                        .IsUnique();
+                    b.HasIndex("ProductID");
 
                     b.ToTable("Campaigns");
                 });
@@ -210,15 +224,10 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AddressDefinitionID")
-                        .HasColumnType("int");
-
                     b.Property<string>("CountryName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CountryID");
-
-                    b.HasIndex("AddressDefinitionID");
 
                     b.ToTable("Countries");
                 });
@@ -274,10 +283,10 @@ namespace DataAccessLayer.Migrations
                     b.Property<int>("BankID")
                         .HasColumnType("int");
 
-                    b.Property<int>("InstallmentTableID")
+                    b.Property<int?>("InstallmentTableID")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductID")
+                    b.Property<int?>("ProductID")
                         .HasColumnType("int");
 
                     b.HasKey("InstallmentID");
@@ -286,10 +295,10 @@ namespace DataAccessLayer.Migrations
                         .IsUnique();
 
                     b.HasIndex("InstallmentTableID")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[InstallmentTableID] IS NOT NULL");
 
-                    b.HasIndex("ProductID")
-                        .IsUnique();
+                    b.HasIndex("ProductID");
 
                     b.ToTable("Installments");
                 });
@@ -319,7 +328,7 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CargoID")
+                    b.Property<int?>("CargoID")
                         .HasColumnType("int");
 
                     b.Property<string>("CargoNo")
@@ -328,19 +337,19 @@ namespace DataAccessLayer.Migrations
                     b.Property<DateTime>("DeliveryDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("InstallmentID")
+                    b.Property<int?>("InstallmentID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("OrderStatusID")
+                    b.Property<int?>("OrderStatusID")
                         .HasColumnType("int");
 
-                    b.Property<int>("PaymentOptionsID")
+                    b.Property<int?>("PaymentOptionsID")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductID")
+                    b.Property<int?>("ProductID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ProjectedDeliveryDate")
@@ -398,7 +407,7 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BrandID")
+                    b.Property<int?>("BrandID")
                         .HasColumnType("int");
 
                     b.Property<int>("MainCategoryID")
@@ -410,7 +419,7 @@ namespace DataAccessLayer.Migrations
                     b.Property<int?>("ProductFeatureID")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductPriceID")
+                    b.Property<int?>("ProductPriceID")
                         .HasColumnType("int");
 
                     b.Property<bool>("ProductStatus")
@@ -551,8 +560,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("CartID");
 
-                    b.HasIndex("ProductID")
-                        .IsUnique();
+                    b.HasIndex("ProductID");
 
                     b.ToTable("ShoppingCarts");
                 });
@@ -638,11 +646,29 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.AddressDefinition", b =>
                 {
+                    b.HasOne("EntityLayer.Concrete.City", "City")
+                        .WithMany("AddressDefinitions")
+                        .HasForeignKey("CityID");
+
+                    b.HasOne("EntityLayer.Concrete.Country", "Country")
+                        .WithMany("AddressDefinitions")
+                        .HasForeignKey("CountryID");
+
+                    b.HasOne("EntityLayer.Concrete.District", "District")
+                        .WithMany("AddressDefinitions")
+                        .HasForeignKey("DistrictID");
+
                     b.HasOne("EntityLayer.Concrete.User", "User")
                         .WithMany()
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("City");
+
+                    b.Navigation("Country");
+
+                    b.Navigation("District");
 
                     b.Navigation("User");
                 });
@@ -669,8 +695,8 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("EntityLayer.Concrete.Campaigns", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.Product", "Product")
-                        .WithOne("campaigns")
-                        .HasForeignKey("EntityLayer.Concrete.Campaigns", "ProductID")
+                        .WithMany("campaigns")
+                        .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -686,15 +712,6 @@ namespace DataAccessLayer.Migrations
                         .IsRequired();
 
                     b.Navigation("Country");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Country", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.AddressDefinition", "AddressDefinition")
-                        .WithMany()
-                        .HasForeignKey("AddressDefinitionID");
-
-                    b.Navigation("AddressDefinition");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.District", b =>
@@ -718,15 +735,11 @@ namespace DataAccessLayer.Migrations
 
                     b.HasOne("EntityLayer.Concrete.InstallmentTable", "InstallmentTable")
                         .WithOne("Installments")
-                        .HasForeignKey("EntityLayer.Concrete.Installments", "InstallmentTableID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EntityLayer.Concrete.Installments", "InstallmentTableID");
 
                     b.HasOne("EntityLayer.Concrete.Product", "Product")
-                        .WithOne("installments")
-                        .HasForeignKey("EntityLayer.Concrete.Installments", "ProductID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("installments")
+                        .HasForeignKey("ProductID");
 
                     b.Navigation("Banks");
 
@@ -739,33 +752,23 @@ namespace DataAccessLayer.Migrations
                 {
                     b.HasOne("EntityLayer.Concrete.Cargo", "Cargo")
                         .WithMany("Orders")
-                        .HasForeignKey("CargoID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CargoID");
 
                     b.HasOne("EntityLayer.Concrete.Installments", "Installments")
                         .WithMany("Orders")
-                        .HasForeignKey("InstallmentID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("InstallmentID");
 
                     b.HasOne("EntityLayer.Concrete.OrderStatus", "OrderStatus")
                         .WithMany("Orders")
-                        .HasForeignKey("OrderStatusID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OrderStatusID");
 
                     b.HasOne("EntityLayer.Concrete.PaymentOptions", "PaymentOptions")
                         .WithMany("Orders")
-                        .HasForeignKey("PaymentOptionsID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PaymentOptionsID");
 
                     b.HasOne("EntityLayer.Concrete.Product", "Product")
                         .WithMany("orders")
-                        .HasForeignKey("ProductID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProductID");
 
                     b.Navigation("Cargo");
 
@@ -782,9 +785,7 @@ namespace DataAccessLayer.Migrations
                 {
                     b.HasOne("EntityLayer.Concrete.Brand", "Brand")
                         .WithMany("Products")
-                        .HasForeignKey("BrandID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BrandID");
 
                     b.HasOne("EntityLayer.Concrete.MainCategory", "MainCategory")
                         .WithMany("Products")
@@ -798,9 +799,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasOne("EntityLayer.Concrete.ProductPrice", "ProductPrice")
                         .WithMany("Products")
-                        .HasForeignKey("ProductPriceID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProductPriceID");
 
                     b.Navigation("Brand");
 
@@ -845,8 +844,8 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("EntityLayer.Concrete.ShoppingCart", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.Product", "Product")
-                        .WithOne("shoppingCart")
-                        .HasForeignKey("EntityLayer.Concrete.ShoppingCart", "ProductID")
+                        .WithMany("shoppingCart")
+                        .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -866,15 +865,15 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.User", b =>
                 {
-                    b.HasOne("EntityLayer.Concrete.City", null)
+                    b.HasOne("EntityLayer.Concrete.City", "City")
                         .WithMany("Users")
                         .HasForeignKey("CityID");
 
-                    b.HasOne("EntityLayer.Concrete.Country", null)
-                        .WithMany("users")
+                    b.HasOne("EntityLayer.Concrete.Country", "Country")
+                        .WithMany("Users")
                         .HasForeignKey("CountryID");
 
-                    b.HasOne("EntityLayer.Concrete.District", null)
+                    b.HasOne("EntityLayer.Concrete.District", "District")
                         .WithMany("Users")
                         .HasForeignKey("DistrictID");
 
@@ -883,6 +882,12 @@ namespace DataAccessLayer.Migrations
                         .HasForeignKey("RoleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("City");
+
+                    b.Navigation("Country");
+
+                    b.Navigation("District");
 
                     b.Navigation("Role");
                 });
@@ -909,6 +914,8 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.City", b =>
                 {
+                    b.Navigation("AddressDefinitions");
+
                     b.Navigation("Districts");
 
                     b.Navigation("Users");
@@ -916,13 +923,17 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.Country", b =>
                 {
+                    b.Navigation("AddressDefinitions");
+
                     b.Navigation("cities");
 
-                    b.Navigation("users");
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.District", b =>
                 {
+                    b.Navigation("AddressDefinitions");
+
                     b.Navigation("Users");
                 });
 

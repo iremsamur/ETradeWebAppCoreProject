@@ -17,7 +17,7 @@ namespace EntityLayer.Concrete
         public bool ProductStatus { get; set; }
         //Category Ve Product ilişkisi
         [ForeignKey("MainCategory")]
-        public int? MainCategoryID { get; set; }
+        public int MainCategoryID { get; set; }
         public MainCategory MainCategory { get; set; }
         //Brand Ve Product Arasındaki ilişki
         [ForeignKey("Brand")]
@@ -30,15 +30,15 @@ namespace EntityLayer.Concrete
         public List<ProductFeatureDetail> ProductFeatureDetails { get; set; }//çoka çok ilişki
                                                                              //ürün ve fiyatı arasındaki ilişki için
         [ForeignKey("ProductPrice")]
-        public int ProductPriceID { get; set; }
+        public int? ProductPriceID { get; set; }
         //Product ve campaigns ilişkisi
         public ProductPrice ProductPrice { get; set; }
         //Kampanyalarla ürünler ilişkisi
-        public Campaigns campaigns { get; set; }
+        public List<Campaigns> campaigns { get; set; }
         //taksitlerle rünler ilişkisi 
-        public Installments installments { get; set; }
+        public List<Installments> installments { get; set; }
         //Sepet ürün ilişkisi
-        public ShoppingCart shoppingCart { get; set; }
+        public List<ShoppingCart> shoppingCart { get; set; }
 
 
         public List<Order> orders { get; set; }

@@ -18,7 +18,7 @@ namespace EntityLayer.Concrete
 
         //Product Ve ProductImage ilişkisi
         [ForeignKey("Product")]
-        public int? ProductID { get; set; }
+        public int ProductID { get; set; }
         public Product Product { get; set; }
 
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bt7I9stvSrQdeY7JIAsxxKTZ7BKt7/dxI0OeO5WUVVEQLni1jgZNnf9zHgtXwiZ9g2J1/ZUhBz4Z62Jk+l8s8A==",
+  "dgSpecHash": "Peht1phEQLEkFP0Hox7AGVUcPswKYn2SHbhLF2z1lZd4kDLLpOEotgJ4C9xWtpfVM8XtA/6NWv2A8jwWe4mrBA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\CoreLayer\\CoreLayer.csproj",
+  "projectFilePath": "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\CoreLayer\\CoreLayer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

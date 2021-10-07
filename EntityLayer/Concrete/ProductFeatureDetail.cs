@@ -19,7 +19,7 @@ namespace EntityLayer.Concrete
 
         //Detail Ve Feature arasındaki ilişki
         [ForeignKey("ProductFeature")]
-        public int? ProductFeatureID { get; set; }
+        public int ProductFeatureID { get; set; }
         public ProductFeature ProductFeature { get; set; }
 
     }

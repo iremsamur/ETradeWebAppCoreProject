@@ -13,12 +13,13 @@ namespace EntityLayer.Concrete
         [Key]
         public int DistrictID { get; set; }
         public string DistrictName { get; set; }
-        [ForeignKey("City")]
 
-        public int? CityID { get; set; }
+        [ForeignKey("City")]
+        public int CityID { get; set; }
         public City City { get; set; }
 
         public List<User> Users { get; set; }
-        
+        public List<AddressDefinition> AddressDefinitions { get; set; }
+
     }
 }

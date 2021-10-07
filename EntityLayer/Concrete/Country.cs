@@ -15,9 +15,8 @@ namespace EntityLayer.Concrete
         public string CountryName { get; set; }
 
         public List<City> cities { get; set; }
-        public List<User> users { get; set; }
-        [ForeignKey("AddressDefiniton")]
-        public int? AddressDefinitionID { get; set; }
-        public AddressDefinition AddressDefinition { get; set; }
+
+        public List<User> Users { get; set; }
+        public List<AddressDefinition> AddressDefinitions { get; set; }
     }
 }

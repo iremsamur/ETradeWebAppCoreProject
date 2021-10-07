@@ -10,3 +10,15 @@ C:\Users\User\Desktop\C# Projects\ETradeWebAppWithCore\EntityLayer\obj\Debug\net
 C:\Users\User\Desktop\C# Projects\ETradeWebAppWithCore\EntityLayer\obj\Debug\net5.0\EntityLayer.dll
 C:\Users\User\Desktop\C# Projects\ETradeWebAppWithCore\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll
 C:\Users\User\Desktop\C# Projects\ETradeWebAppWithCore\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\EntityLayer\bin\Debug\net5.0\EntityLayer.deps.json
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\EntityLayer\bin\Debug\net5.0\EntityLayer.dll
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\EntityLayer\bin\Debug\net5.0\ref\EntityLayer.dll
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\EntityLayer\bin\Debug\net5.0\EntityLayer.pdb
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\EntityLayer\obj\Debug\net5.0\EntityLayer.csprojAssemblyReference.cache
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\EntityLayer\obj\Debug\net5.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfo.cs
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\EntityLayer\obj\Debug\net5.0\EntityLayer.dll
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb

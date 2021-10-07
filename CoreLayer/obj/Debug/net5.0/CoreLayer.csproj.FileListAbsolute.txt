@@ -10,3 +10,15 @@ C:\Users\User\Desktop\C# Projects\ETradeWebAppWithCore\CoreLayer\obj\Debug\net5.
 C:\Users\User\Desktop\C# Projects\ETradeWebAppWithCore\CoreLayer\obj\Debug\net5.0\CoreLayer.dll
 C:\Users\User\Desktop\C# Projects\ETradeWebAppWithCore\CoreLayer\obj\Debug\net5.0\ref\CoreLayer.dll
 C:\Users\User\Desktop\C# Projects\ETradeWebAppWithCore\CoreLayer\obj\Debug\net5.0\CoreLayer.pdb
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\CoreLayer\bin\Debug\net5.0\CoreLayer.deps.json
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\CoreLayer\bin\Debug\net5.0\CoreLayer.dll
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\CoreLayer\bin\Debug\net5.0\ref\CoreLayer.dll
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\CoreLayer\bin\Debug\net5.0\CoreLayer.pdb
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\CoreLayer\obj\Debug\net5.0\CoreLayer.csprojAssemblyReference.cache
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\CoreLayer\obj\Debug\net5.0\CoreLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\CoreLayer\obj\Debug\net5.0\CoreLayer.AssemblyInfoInputs.cache
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\CoreLayer\obj\Debug\net5.0\CoreLayer.AssemblyInfo.cs
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\CoreLayer\obj\Debug\net5.0\CoreLayer.csproj.CoreCompileInputs.cache
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\CoreLayer\obj\Debug\net5.0\CoreLayer.dll
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\CoreLayer\obj\Debug\net5.0\ref\CoreLayer.dll
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\CoreLayer\obj\Debug\net5.0\CoreLayer.pdb

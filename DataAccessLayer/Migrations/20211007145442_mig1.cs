@@ -216,8 +216,8 @@ namespace DataAccessLayer.Migrations
                     ProductDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProductStatus = table.Column<bool>(type: "bit", nullable: false),
                     MainCategoryID = table.Column<int>(type: "int", nullable: false),
-                    BrandID = table.Column<int>(type: "int", nullable: false),
-                    ProductPriceID = table.Column<int>(type: "int", nullable: false),
+                    BrandID = table.Column<int>(type: "int", nullable: true),
+                    ProductPriceID = table.Column<int>(type: "int", nullable: true),
                     ProductFeatureID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -228,7 +228,7 @@ namespace DataAccessLayer.Migrations
                         column: x => x.BrandID,
                         principalTable: "Brands",
                         principalColumn: "BrandID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Products_MainCategories_MainCategoryID",
                         column: x => x.MainCategoryID,
@@ -246,7 +246,7 @@ namespace DataAccessLayer.Migrations
                         column: x => x.ProductPriceID,
                         principalTable: "ProductPrices",
                         principalColumn: "ProductPriceID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -301,8 +301,8 @@ namespace DataAccessLayer.Migrations
                     InstallmentID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BankID = table.Column<int>(type: "int", nullable: false),
-                    ProductID = table.Column<int>(type: "int", nullable: false),
-                    InstallmentTableID = table.Column<int>(type: "int", nullable: false)
+                    ProductID = table.Column<int>(type: "int", nullable: true),
+                    InstallmentTableID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -318,13 +318,13 @@ namespace DataAccessLayer.Migrations
                         column: x => x.InstallmentTableID,
                         principalTable: "InstallmentTables",
                         principalColumn: "InstallmentTableID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Installments_Products_ProductID",
                         column: x => x.ProductID,
                         principalTable: "Products",
                         principalColumn: "ProductID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -405,16 +405,16 @@ namespace DataAccessLayer.Migrations
                     RoleID = table.Column<int>(type: "int", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserTcIdentificationNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CountryID = table.Column<int>(type: "int", nullable: true),
+                    CityID = table.Column<int>(type: "int", nullable: true),
+                    DistrictID = table.Column<int>(type: "int", nullable: true),
                     UserEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserMobileNumber = table.Column<long>(type: "bigint", nullable: false),
                     UserPhoneNumber = table.Column<long>(type: "bigint", nullable: false),
                     UserPassword = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AskSecurity = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SecurityQuestionAndAnswer = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserRegistrationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CityID = table.Column<int>(type: "int", nullable: true),
-                    CountryID = table.Column<int>(type: "int", nullable: true),
-                    DistrictID = table.Column<int>(type: "int", nullable: true)
+                    UserRegistrationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -451,13 +451,12 @@ namespace DataAccessLayer.Migrations
                 {
                     OrderID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductID = table.Column<int>(type: "int", nullable: false),
-                    OrderStatusID = table.Column<int>(type: "int", nullable: false),
-                    PaymentOptionsID = table.Column<int>(type: "int", nullable: false),
-                    InstallmentID = table.Column<int>(type: "int", nullable: false),
-                    InstallmentsInstallmentID = table.Column<int>(type: "int", nullable: true),
+                    ProductID = table.Column<int>(type: "int", nullable: true),
+                    OrderStatusID = table.Column<int>(type: "int", nullable: true),
+                    PaymentOptionsID = table.Column<int>(type: "int", nullable: true),
+                    InstallmentID = table.Column<int>(type: "int", nullable: true),
                     OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CargoID = table.Column<int>(type: "int", nullable: false),
+                    CargoID = table.Column<int>(type: "int", nullable: true),
                     CargoNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProjectedDeliveryDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DeliveryDate = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -470,10 +469,10 @@ namespace DataAccessLayer.Migrations
                         column: x => x.CargoID,
                         principalTable: "Cargos",
                         principalColumn: "CargoID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Orders_Installments_InstallmentsInstallmentID",
-                        column: x => x.InstallmentsInstallmentID,
+                        name: "FK_Orders_Installments_InstallmentID",
+                        column: x => x.InstallmentID,
                         principalTable: "Installments",
                         principalColumn: "InstallmentID",
                         onDelete: ReferentialAction.Restrict);
@@ -482,19 +481,19 @@ namespace DataAccessLayer.Migrations
                         column: x => x.OrderStatusID,
                         principalTable: "OrderStatuses",
                         principalColumn: "OrderStatusID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Orders_PaymentOptions_PaymentOptionsID",
                         column: x => x.PaymentOptionsID,
                         principalTable: "PaymentOptions",
                         principalColumn: "PaymentOptionsID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Orders_Products_ProductID",
                         column: x => x.ProductID,
                         principalTable: "Products",
                         principalColumn: "ProductID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -503,11 +502,10 @@ namespace DataAccessLayer.Migrations
                 {
                     AddressDefinitionID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserID = table.Column<int>(type: "int", nullable: false),
-                    CountryID = table.Column<int>(type: "int", nullable: false),
-                    CityID = table.Column<int>(type: "int", nullable: false),
-                    DistrictID = table.Column<int>(type: "int", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CountryID = table.Column<int>(type: "int", nullable: true),
+                    CityID = table.Column<int>(type: "int", nullable: true),
+                    DistrictID = table.Column<int>(type: "int", nullable: true),
+                    AddressDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SurName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Company = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -515,7 +513,8 @@ namespace DataAccessLayer.Migrations
                     TaxAdministration = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TaxNo = table.Column<int>(type: "int", nullable: false),
                     MobileNumber = table.Column<long>(type: "bigint", nullable: false),
-                    PhoneNumber = table.Column<long>(type: "bigint", nullable: false)
+                    PhoneNumber = table.Column<long>(type: "bigint", nullable: false),
+                    UserID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -525,19 +524,19 @@ namespace DataAccessLayer.Migrations
                         column: x => x.CityID,
                         principalTable: "Cities",
                         principalColumn: "CityID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_AddressDefinitions_Countries_CountryID",
                         column: x => x.CountryID,
                         principalTable: "Countries",
                         principalColumn: "CountryID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_AddressDefinitions_Districts_DistrictID",
                         column: x => x.DistrictID,
                         principalTable: "Districts",
                         principalColumn: "DistrictID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_AddressDefinitions_Users_UserID",
                         column: x => x.UserID,
@@ -605,8 +604,7 @@ namespace DataAccessLayer.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Campaigns_ProductID",
                 table: "Campaigns",
-                column: "ProductID",
-                unique: true);
+                column: "ProductID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Cities_CountryID",
@@ -628,13 +626,13 @@ namespace DataAccessLayer.Migrations
                 name: "IX_Installments_InstallmentTableID",
                 table: "Installments",
                 column: "InstallmentTableID",
-                unique: true);
+                unique: true,
+                filter: "[InstallmentTableID] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Installments_ProductID",
                 table: "Installments",
-                column: "ProductID",
-                unique: true);
+                column: "ProductID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_CargoID",
@@ -642,9 +640,9 @@ namespace DataAccessLayer.Migrations
                 column: "CargoID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_InstallmentsInstallmentID",
+                name: "IX_Orders_InstallmentID",
                 table: "Orders",
-                column: "InstallmentsInstallmentID");
+                column: "InstallmentID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_OrderStatusID",
@@ -704,8 +702,7 @@ namespace DataAccessLayer.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_ShoppingCarts_ProductID",
                 table: "ShoppingCarts",
-                column: "ProductID",
-                unique: true);
+                column: "ProductID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SubCategories_MainCategoryID",

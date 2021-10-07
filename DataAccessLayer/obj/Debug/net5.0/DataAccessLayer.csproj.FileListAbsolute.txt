@@ -16,3 +16,21 @@ C:\Users\User\Desktop\C# Projects\ETradeWebAppWithCore\DataAccessLayer\obj\Debug
 C:\Users\User\Desktop\C# Projects\ETradeWebAppWithCore\DataAccessLayer\obj\Debug\net5.0\ref\DataAccessLayer.dll
 C:\Users\User\Desktop\C# Projects\ETradeWebAppWithCore\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.pdb
 C:\Users\User\Desktop\C# Projects\ETradeWebAppWithCore\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.deps.json
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.json
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.dev.json
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.dll
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\bin\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\bin\Debug\net5.0\EntityLayer.dll
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\bin\Debug\net5.0\EntityLayer.pdb
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.dll
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\obj\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\RTC9911\Source\Repos\ETradeWebAppCoreProject\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.genruntimeconfig.cache

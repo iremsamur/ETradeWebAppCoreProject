@@ -14,7 +14,7 @@ namespace EntityLayer.Concrete
         public int CartID { get; set; }
         public int ReservationPeriod { get; set; }
         [ForeignKey("Product")]
-        public int? ProductID { get; set; }
+        public int ProductID { get; set; }
 
         public Product Product { get; set; }
 

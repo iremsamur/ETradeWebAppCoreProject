@@ -1,26 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\CoreLayer\\CoreLayer.csproj": {}
+    "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\CoreLayer\\CoreLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\CoreLayer\\CoreLayer.csproj": {
+    "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\CoreLayer\\CoreLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\CoreLayer\\CoreLayer.csproj",
+        "projectUniqueName": "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\CoreLayer\\CoreLayer.csproj",
         "projectName": "CoreLayer",
-        "projectPath": "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\CoreLayer\\CoreLayer.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\C# Projects\\ETradeWebAppWithCore\\CoreLayer\\obj\\",
+        "projectPath": "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\CoreLayer\\CoreLayer.csproj",
+        "packagesPath": "C:\\Users\\RTC9911\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RTC9911\\Source\\Repos\\ETradeWebAppCoreProject\\CoreLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\RTC9911\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -54,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.207\\RuntimeIdentifierGraph.json"
         }
       }
     }

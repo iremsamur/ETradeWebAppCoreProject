@@ -16,7 +16,7 @@ namespace EntityLayer.Concrete
         public string SubCategoryName { get; set; }
         //Main Ve Sub Arasındaki İlişki
         [ForeignKey("MainCategory")]
-        public int? MainCategoryID { get; set; }
+        public int MainCategoryID { get; set; }
         public MainCategory MainCategory { get; set; }
 
     }

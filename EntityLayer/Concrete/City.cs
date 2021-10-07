@@ -15,11 +15,12 @@ namespace EntityLayer.Concrete
         public string CityName { get; set; }
         [ForeignKey("Country")]
 
-        public int? CountryID { get; set; }
+        public int CountryID { get; set; }
         public Country Country { get; set; }
 
         public List<District> Districts { get; set; }//her şehirde birden fazla semt olabilir. çok olan district tek olan city
         public List<User> Users { get; set; }
-       
+        public List<AddressDefinition> AddressDefinitions { get; set; }
+
     }
 }
